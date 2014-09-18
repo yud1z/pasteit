@@ -38,138 +38,7 @@
         <input type="text" name="fullname" placeholder="Full Name" value="" class="error">
 
 
-        <label for="Gender">Gender(<font style="color:red">*</font>)</label>
-        <select name="Gender">
-          <option value="2">Male</option>
-          <option value="1">Female</option>
-        </select>
-
-
-        <style type="text/css" media="screen">
-.date_pendek{
-  width:140px;
-}
-        </style>
-
-        <label for="tanggal">Birthdate (DD/MM/YY)(<font style="color:red">*</font>)</label>
-        <table>
-          <tr>
-            <td>
-              <select name="tanggal" class="date_pendek">
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-                <option value="7">07</option>
-                <option value="8">08</option>
-                <option value="9">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-              </select>
-            </td>
-            <td>
-              <select name="bulan" class="date_pendek">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-            </td>
-            <td>
-              <select name="tahun" class="date_pendek">
-                <option value="1940">1940</option>
-                <option value="1941">1941</option>
-                <option value="1942">1942</option>
-                <option value="1943">1943</option>
-                <option value="1944">1944</option>
-                <option value="1945">1945</option>
-                <option value="1946">1946</option>
-                <option value="1947">1947</option>
-                <option value="1948">1948</option>
-                <option value="1949">1949</option>
-                <option value="1950">1950</option>
-                <option value="1951">1951</option>
-                <option value="1952">1952</option>
-                <option value="1953">1953</option>
-                <option value="1954">1954</option>
-                <option value="1955">1955</option>
-                <option value="1956">1956</option>
-                <option value="1957">1957</option>
-                <option value="1958">1958</option>
-                <option value="1959">1959</option>
-                <option value="1960">1960</option>
-                <option value="1961">1961</option>
-                <option value="1962">1962</option>
-                <option value="1963">1963</option>
-                <option value="1964">1964</option>
-                <option value="1965">1965</option>
-                <option value="1966">1966</option>
-                <option value="1967">1967</option>
-                <option value="1968">1968</option>
-                <option value="1969">1969</option>
-                <option value="1970">1970</option>
-                <option value="1971">1971</option>
-                <option value="1972">1972</option>
-                <option value="1973">1973</option>
-                <option value="1974">1974</option>
-                <option value="1975">1975</option>
-                <option value="1976">1976</option>
-                <option value="1977">1977</option>
-                <option value="1978">1978</option>
-                <option value="1979">1979</option>
-                <option value="1980">1980</option>
-                <option value="1981">1981</option>
-                <option value="1982">1982</option>
-                <option value="1983">1983</option>
-                <option value="1984">1984</option>
-                <option value="1985">1985</option>
-                <option value="1986">1986</option>
-                <option value="1987">1987</option>
-                <option value="1988">1988</option>
-                <option value="1989">1989</option>
-                <option value="1990">1990</option>
-                <option value="1991">1991</option>
-                <option value="1992">1992</option>
-                <option value="1993">1993</option>
-                <option value="1994">1994</option>
-                <option value="1995">1995</option>
-              </select>
-            </td>
-          </tr>
-        </table>
         <br><br>
-        <label for="alamat"><i class="icon-pushpin"></i>Postal Address(<font style="color:red">*</font>)</label>
-        <textarea type="text" name="alamat" placeholder="Address" style="width:410px;height:75px;"></textarea>
 
         <label for="province">Province(<font style="color:red">*</font>)</label>
         <select name="province" id="province">
@@ -186,15 +55,6 @@
           <option id="null_district" value="-1">---</option>
 
         </select>
-        <br>
-        <label for="zip">Postal Code(<font style="color:red">*</font>)</label>
-        <input type="text" name="zip" placeholder="Zip Postal Code">
-
-        </p>
-        <p class="float">
-        <label for="phone"><i class="icon-phone"></i>Phone Number</label>
-        <input type="text" name="mobile" placeholder="Mobile Number">(<font style="color:red">*</font>)
-        <input type="text" name="Phone" placeholder="Phone Number">
 
         <br>
         <label for="email"><i class="icon-envelope-alt"></i>Email Address(<font style="color:red">*</font>)</label>
@@ -205,20 +65,6 @@
         <input type="password" name="password" placeholder="Expected Password">
         <input type="password" name="vassword" placeholder="Verify password">
         <br>
-        </p><div class="captc float" style="min-height:50px;min-width:40px;">
-          {captcha}
-        </div>
-        <div class="float">
-          <label for="captcha"><i class="icon-barcode"></i>Enter Text Above(<font style="color:red">*</font>)</label>
-          <input type="text" name="captcha" placeholder="Enter Captcha">
-          <label for="refresh"><i class="icon-repeat"></i><a id="refresh_captcha" href="javascript:void(0)">Refresh Code</a></label>
-        </div>
-        <br>
-        Mailing List  <input type="checkbox"  name="milist" placeholder="Expected Password">
-        <br>
-        Newsletter  <input type="checkbox"  name="newsletter" placeholder="Expected Password">
-        <p></p>
-
         <p>
         if you see (<font style="color:red">*</font>), it means Required
         </p>
@@ -290,29 +136,6 @@ $('[name="fullname"]').keyup(function(){
     fetch_valid('fullname', this.value);
     }); 
 
-$('[name="alamat"]').keyup(function(){
-    show_load();
-    fetch_valid('alamat', this.value);
-    }); 
-
-$('[name="district"]').keyup(function(){
-    show_load();
-    fetch_valid('district', this.value);
-    }); 
-
-
-$('[name="zip"]').keyup(function(){
-    show_load();
-    fetch_valid('zip', this.value);
-    }); 
-
-
-$('[name="mobile"]').keyup(function(){
-    show_load();
-    fetch_valid('mobile', this.value);
-    }); 
-
-
 $('[name="email"]').keyup(function(){
     show_load();
     fetch_valid('email', this.value, $('[name="vemail"]').val());
@@ -354,15 +177,11 @@ $('[name="signup"]').click(function(e){
 
     var valid1 = new fetch_valid('username', $('[name="username"]').val());
     var valid1 = new fetch_valid('fullname', $('[name="fullname"]').val());
-    var valid1 = new fetch_valid('alamat', $('[name="alamat"]').val());
     var valid1 = new fetch_valid('district', $('[name="district"]').val());
-    var valid1 = new fetch_valid('zip', $('[name="zip"]').val());
-    var valid1 = new fetch_valid('mobile', $('[name="mobile"]').val());
     var valid1 = new fetch_valid('email', $('[name="email"]').val(), $('[name="vemail"]').val());
     var valid1 = new fetch_valid('vemail', $('[name="vemail"]').val(), $('[name="email"]').val());
     var valid1 = new fetch_valid('password', $('[name="password"]').val(), $('[name="vassword"]').val());
     var valid1 = new fetch_valid('vassword', $('[name="vassword"]').val(), $('[name="password"]').val());
-    var valid1 = new fetch_valid('captcha', $('[name="captcha"]').val());
 
 
     var we = $('#wedew').html();

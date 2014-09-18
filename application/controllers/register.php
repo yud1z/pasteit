@@ -37,9 +37,6 @@ class Register extends Category
     $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[12]|is_unique[druid_user.user_name]');
     $this->form_validation->set_rules('fullname', 'Fullname', 'required|min_length[3]|max_length[50]|');
     $this->form_validation->set_rules('district', 'District', 'callback_valid_place');
-    $this->form_validation->set_rules('alamat', 'Postal Address', 'required');
-    $this->form_validation->set_rules('zip', 'Postal Code', 'required');
-    $this->form_validation->set_rules('mobile', 'mobile Phone Number', 'required');
     $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|match[vmail]|is_unique[druid_data.data_email]');
     $this->form_validation->set_rules('vemail', 'Verivy Email Address', 'required|valid_email');
     $this->form_validation->set_rules('password', 'Password', 'required|match[vassword]||min_length[5]|max_length[12]|');
@@ -72,56 +69,56 @@ class Register extends Category
         'user_id'             => $id,
         'data_nama_lengkap'   => $_POST['fullname'],
         'data_tanggal_lahir'  => $_POST['tanggal'] . '-' . $_POST['bulan'] . '-' . $_POST['tahun'],
-        'data_alamat'         => $_POST['alamat'],
-        'data_kode_pos'       => $_POST['zip'],
+        'data_alamat'         => '',
+        'data_kode_pos'       => '',
         'ongkir_id'           => $_POST['district'],
         'data_negara'         => 'ID',
-        'data_no_telp'        => $_POST['Phone'],
-        'data_no_phone'       => $_POST['mobile'],
+        'data_no_telp'        => '',
+        'data_no_phone'       => '',
         'data_email'          => $_POST['email'],
-        'data_newsletter'     => $newsletter,
-        'data_milist'         => $milist,
-        'data_activation'     => '0',
+        'data_newsletter'     => 0,
+        'data_milist'         => 0,
+        'data_activation'     => '1',
         'data_activation_key' => $code,
       );
       $this->db->insert($this->_getBoot_name() . 'data', $data);
 
 
-      //  Send Mail
-      $this->load->library('phpmailer');
+      ////  Send Mail
+      //$this->load->library('phpmailer');
 
-      $mailer = new PHPMailer();
-      $mailer->IsSMTP();
-      $mailer->Host = 'mail.vamily.co.id:587';
-      $mailer->SMTPAuth = TRUE;
+      //$mailer = new PHPMailer();
+      //$mailer->IsSMTP();
+      //$mailer->Host = 'mail.vamily.co.id:587';
+      //$mailer->SMTPAuth = TRUE;
 
-      $mailer->Username = 'vamily@vamily.co.id';  // Change this to your gmail adress
-      $mailer->Password = 'patalsenayan.';  // Change this to your gmail password
-      $mailer->From = 'vamily@vamily.co.id';  // This HAVE TO be your gmail adress
-      $mailer->FromName = 'Vamily'; // This is the from name in the email, you can put anything you like here
+      //$mailer->Username = 'vamily@vamily.co.id';  // Change this to your gmail adress
+      //$mailer->Password = 'patalsenayan.';  // Change this to your gmail password
+      //$mailer->From = 'vamily@vamily.co.id';  // This HAVE TO be your gmail adress
+      //$mailer->FromName = 'Vamily'; // This is the from name in the email, you can put anything you like here
 
-      $mailer->Subject = 'Vamily Link Activation';
-      $mailer->AddAddress($_POST['email']);  // This is where you put the email adress of the person you want to mail
+      //$mailer->Subject = 'Vamily Link Activation';
+      //$mailer->AddAddress($_POST['email']);  // This is where you put the email adress of the person you want to mail
 
-      $mailer->IsHTML(true);
-      $mailer->Body = "
-        Please click link below to activate your account at <a href='http://vamily.co.id'>vamily.co.id</a>
-        <br>
-        <br>
-        <a href='http:://vamily.co.id/activate/code/". $code ."'>Click Here</a>
-        <br>
-        <br>
-or
-<br>
-  <br>
-  http:://vamily.co.id/activate/code/". $code ."
+      //$mailer->IsHTML(true);
+      //$mailer->Body = "
+        //Please click link below to activate your account at <a href='http://vamily.co.id'>vamily.co.id</a>
+        //<br>
+        //<br>
+        //<a href='http:://vamily.co.id/activate/code/". $code ."'>Click Here</a>
+        //<br>
+        //<br>
+//or
+//<br>
+  //<br>
+  //http:://vamily.co.id/activate/code/". $code ."
 
-  <br>
-  <br>
-Thanks
-";
+  //<br>
+  //<br>
+//Thanks
+//";
 
-$mailer->Send();
+//$mailer->Send();
 
 
 //  Got the success Page
