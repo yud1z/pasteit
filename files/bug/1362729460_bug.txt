@@ -1,0 +1,10 @@
+=======================
+- videos ada progress bar
+- story bug(must be down)
+- judul(dikasih kotak)
+- hover icon di komen warna biru, 50% - 100%
+- border + bg = lebih kereng
+- see more, hide comment, icon post, comment, familly request = salah icon
+- create icon upload
+- design note untuk story design
+=======================

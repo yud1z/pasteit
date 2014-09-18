@@ -1,33 +1,77 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-include('welcome.php');
+require_once 'category.php';
 
-class Search extends Welcome {
-
-  /**
-   * Index Page for this controller.
-   *
-   * Maps to the following URL
-   * 		http://example.com/index.php/welcome
-   *	- or -  
-   * 		http://example.com/index.php/welcome/index
-   *	- or -
-   * Since this controller is set as the default controller in 
-   * config/routes.php, it's displayed at http://example.com/
-   *
-   * So any other public methods not prefixed with an underscore will
-   * map to /index.php/welcome/<method_name>
-   * @see http://codeigniter.com/user_guide/general/urls.html
-   */
+class Search extends Category 
+{
 
 
-  public function index(){
+  public function index()
+  {
+    $search = '';
+    if (!empty($_GET)) {
+      $search = '';
+      if (isset($_GET['query'])) {
+          $search = $_GET['query'];
+      }
+    }
 
-    $this->load->view('header');
-    $this->load->view('search');
-    $this->load->view('footer');
+
+    $this->load->model($this->_getBoot_name() . 'content');
+    $val = $this->{$this->_getBoot_name() . 'content'}->get_search_data_content($search);
+    $val = $this->_pure_url($val, 'content_title');
+
+    $val1 = $this->{$this->_getBoot_name() . 'content'}->count_search_data_content($search);
+
+      $data = array(
+        'path'            => $this->_getPackage_path(),  
+        'cart'            => $this->_cart(),  
+        'value'           => $val,  
+        'count'           => $val1,  
+        'string'          => $search,  
+      );
+      $this->parser->parse('search', $data);
 
   }
 
 
+  public function ajax($method = '')
+  {
+    if ($method == 'find') {
+      $this->_find();
+    }
+    else {
+      echo '';
+    }
+  }
+
+  public function _find()
+  {
+    $search = '';
+    if (!empty($_POST)) {
+      $search = '';
+      if (isset($_POST['string'])) {
+          $search = $_POST['string'];
+      }
+    }
+
+    if (!isset($_POST['start'])) {
+      $_POST['start'] = '1';
+    }
+
+    $arg = $_POST['start'];
+
+    $nopage = (isset($arg)) ? $arg : 1;
+    $dataPerPage = 10;
+    $offset = ($nopage - 1) * $dataPerPage;
+    $wew = $offset - 10;
+
+    $this->load->model($this->_getBoot_name() . 'content');
+    $val = $this->{$this->_getBoot_name() . 'content'}->get_search_data_content($search, $wew, $offset);
+    $val = $this->_pure_url($val, 'content_title');
+    echo json_encode($val);
+  }
+
+
 }
+
