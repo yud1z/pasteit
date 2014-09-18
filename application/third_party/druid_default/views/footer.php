@@ -1,4 +1,3 @@
-  <div class="clear"></div>
-</div>
-</body>
+  </body>
+
 </html>
