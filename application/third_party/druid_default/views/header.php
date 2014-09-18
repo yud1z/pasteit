@@ -34,7 +34,8 @@ $(document).foundation();
     <!-- Right Nav Section
  -->
     <ul class="right">
-      <li class="active"><a href="/login">Login</a></li>
+      <li class=""><a href="/login">Login</a></li>
+      <li class="active"><a href="/register">Register</a></li>
     </ul>
 
     <!-- Left Nav Section -->
