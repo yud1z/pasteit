@@ -22,18 +22,12 @@
       <input type="password" name="password" placeholder="Password">
       </p>
 
-      <p class="float">
-      <input name="" type="checkbox" value="">Remember me
-      </p>
-      <p class="float">
-      <a href="#" class="biasa">Forgot Username / Password?</a>
-      </p>
       <p class="clearfix"> 
       </p><h1></h1>
       <p class="float">
-      If you are not registered yet, please<br> <a hfref="#" class="biasa">Sign up</a> here 
+      If you are not registered yet, please<br> <a href="/register" class="biasa">Sign up</a> here 
       </p>  
-      <input type="submit" name="submit" value="Log in">
+      <input type="submit" name="submit" class="button [radius small round]" value="Log in">
       <p></p>
     </form>
   </div>
