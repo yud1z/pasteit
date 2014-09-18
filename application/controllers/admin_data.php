@@ -26,13 +26,18 @@ class Admin_data extends Admin_content {
   /**
    *  lets start
    */
-  public function index()
+  public function _start()
   {
-     $data = array(
-    );
 
-    $this->load->view('admin_data/content_part', $data);     
-    
+    //set the primary key
+    $this->_setAdmin_user_key('datap_id');
+
+    //set the page
+    $this->_setAdmin_user_page('admin_data');
+
+    //set the data model
+    $this->_setAdmin_user_model($this->_getBoot_name() . 'datap');
+
   }
 
   public function _insert_render()
@@ -40,21 +45,18 @@ class Admin_data extends Admin_content {
 
     $page = $this->_getAdmin_user_page();
 
-    $this->_setAdmin_page_template_head('Add Tag');
+    $this->_setAdmin_page_template_head('Add Data');
 
     $content = '';
     $content .= form_open('/'. $page .'/insert');
 
 
-    $content .= form_label('*rank','slide_rank');
-    $content .= form_input('slide_rank');
-
-    $content .= form_label('*content id','content_id');
-    $content .= form_input('content_id');
+    $content .= form_label('*Data','data');
+    $content .= form_textarea('data', '', 'style="width:100%;"');
 
 
     $content .= '<p>';
-    $content .= form_submit('add', 'Add Slide', 'class="btn"');
+    $content .= form_submit('add', 'Add Data', 'class="btn"');
     $content .= '</p>';
 
     $content .= form_close();
