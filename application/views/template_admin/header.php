@@ -42,7 +42,7 @@ $(function(){
 
 <body>
 
-<div class="navbar">
+<div class="navbar navbar-inverse">
   <div class="navbar-inner">
     <div class="" style="">
       <a class="brand" href="/admin">Admin panel</a>
@@ -75,6 +75,21 @@ $(function(){
 
 
           <li class="nav-header">Content</li>
+
+          <li>
+          <a href="/admin_data" title="Managing your Content">
+            <i class="icon-th"></i> Data 
+          </a>
+          </li>
+
+
+          <li>
+          <a href="/admin_ddc" title="Managing your DDC Kategori">
+            <i class="icon-th-list"></i> DDC Kategori 
+          </a>
+          </li>
+
+<!--
           <li>
           <a href="/admin_apps" title="Managing your Content">
             <i class="icon-plane"></i> Apps
@@ -126,6 +141,7 @@ $(function(){
             <i class="icon-file"></i> File
           </a>
           </li>
+-->
 
 
           <li class="nav-header">System</li>
