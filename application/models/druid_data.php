@@ -224,7 +224,6 @@ class druid_data extends druid_content
     return $query->num_rows();
   }
 
-
   /**
    *  check the email row
    *

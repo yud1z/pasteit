@@ -24,6 +24,107 @@ class Admin_detail extends Admin_file {
 
 
   /**
+   *  before the index start
+   */
+  public function _index_start()
+  {
+  
+    $model = $this->_getAdmin_user_model();
+    $key  = $this->_getAdmin_user_key();
+
+    $page = $this->_getAdmin_user_page();
+
+    //set the uri of paging
+    $this->_setBoot_part_uri($page);
+
+    //this get data count perpage
+    $this->_setBoot_part_perpage(10);
+
+    //count form database
+    eval('$this->_setAdmin_user_count($this->'. $model .'->get_row());');
+
+
+    //modify the data
+    $this->_modify();
+
+
+
+    $count = $this->_getAdmin_user_count();
+
+    ////get count all user
+    $this->_setBoot_part_count_data($count);
+
+    ////the argument for paging
+    $argue = $this->_getBoot_part_arg();
+    $this->_part($argue);
+
+
+    ////get the admin list from database
+    ////limited by 10, and make the method for all paging
+    $this->_spread_userdata();
+
+    $data_table = $this->_getAdmin_user_all_data();
+
+    //add action into table
+    $this->_setBoot_gen_data($data_table);
+    $this->_setBoot_gen_edit(true);
+    $this->_setBoot_gen_delete(true);
+    $this->_setBoot_gen_view(true);
+    $this->_setBoot_gen_delimiter(' | ');
+    $this->_setBoot_gen_head($key);
+
+    $this->_gen_action();
+
+    $data_table = $this->_getBoot_gen_result();
+
+    $wew = array();
+    foreach ($data_table as $key) {
+
+    unset($key['data_no_telp']);
+    unset($key['data_alamat']);
+    unset($key['data_milist']);
+    unset($key['data_newsletter']);
+    unset($key['data_activation']);
+    unset($key['data_activation_key']);
+    unset($key['data_perjanjian']);
+    unset($key['data_diskon']);
+    unset($key['data_no_phone']);
+    unset($key['data_waktu']);
+    unset($key['data_kode_pos']);
+    unset($key['ongkir_id']);
+    unset($key['data_negara']);
+
+    $wew[] = $key;
+
+    }
+
+    //opn($wew);
+
+
+    //opn($data_table);
+
+    //render it into table
+    $this->_setBoot_table_data($wew);
+    $this->_setBoot_table_font(13);
+    $this->table();
+
+
+    $data = array(
+      'row' => $this->_getBoot_table_data(),
+      'paging' => $this->_getBoot_part_render(),
+    );
+    $this->_push_data($data, $this->_getAdmin_page_key_push(), $this->_getAdmin_page_data_push());
+    //print_r($data);
+
+    //show the content
+    $this->load->view('/'. $page .'/content', $this->_getAdmin_page_result_push());
+
+  
+  }
+
+
+
+  /**
    *  lets start
    */
   public function _start()

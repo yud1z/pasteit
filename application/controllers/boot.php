@@ -1025,6 +1025,8 @@ class Boot extends CI_Controller {
 
         foreach ($data as $key_data => $cnt_data) {
 
+          //opn($key_data);
+
           //echo $a;
 
           if ($a <= $count) {

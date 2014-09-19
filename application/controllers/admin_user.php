@@ -206,7 +206,9 @@ class Admin_user extends Admin {
 
     $data_table = $this->_getBoot_gen_result();
 
+    //opn($data_table);
 
+    //unset($data_table);
 
     //render it into table
     $this->_setBoot_table_data($data_table);

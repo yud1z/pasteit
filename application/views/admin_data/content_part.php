@@ -10,6 +10,4 @@
       <center>
         <?php echo $paging = (isset($paging)) ? $paging : ''; ?>
       </center>
-
-
 </div>
